@@ -44,6 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
         current.y = e.clientY;
     });
 
+    document.addEventListener('touchstart', (e) => {
+        clicked = true;
+        current.x = e.touches[0].clientX;
+        current.y = e.touches[0].clientY;
+    });
+
+    canvas.addEventListener('touchmove', (e) => {
+        if (!clicked) {
+            return;
+        }
+        drawLine(current.x, current.y, e.touches[0].clientX, e.touches[0].clientY, current.color, true);
+        current.x = e.touches[0].clientX;
+        current.y = e.touches[0].clientY;
+    });
+
+    document.addEventListener('touchend', (e) => {
+        clicked = false;
+        if(e.touches.length) {
+            drawLine(current.x, current.y, e.touches[0].clientX, e.touches[0].clientY, current.color, true);
+        }
+    });
+
     function onDrawingEvent(data) {
         console.log(data.color);
         drawLine(data.x0, data.y0, data.x1, data.y1, data.color);
