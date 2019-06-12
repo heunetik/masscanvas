@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let socket = io();
+    const socket = io();
     let clicked = false;
-    let canvas = document.getElementById('cvs');
-    let ctx = canvas.getContext('2d');
-    let current = {
-        color: "#xxxxxx".replace(/x/g, y=>(Math.random()*16|0).toString(16))
+    const canvas = document.getElementById('cvs');
+    const ctx = canvas.getContext('2d');
+    const current = {
+        color: "#xxxxxx".replace(/x/g, y => (Math.random() * 16 | 0).toString(16))
     };
 
-    ctx.canvas.width  = window.innerWidth;
+    ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
     ctx.strokeStyle = current.color;
     ctx.lineWidth = 6;
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (e) => {
-        if (!clicked) { 
+        if (!clicked) {
             return;
         }
         clicked = false;
@@ -61,13 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('touchend', (e) => {
         clicked = false;
-        if(e.touches.length) {
+        if (e.touches.length) {
             drawLine(current.x, current.y, e.touches[0].clientX, e.touches[0].clientY, current.color, true);
         }
     });
 
     function onDrawingEvent(data) {
-        console.log(data.color);
         drawLine(data.x0, data.y0, data.x1, data.y1, data.color);
     }
 

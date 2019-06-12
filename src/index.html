@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <title>MassCanvas</title>
     <meta charset="utf-8" />
@@ -9,11 +10,14 @@
         let socket = io();
     </script>
 </head>
-<body>
-    <canvas id="cvs" width="1000" height="500"></canvas>
 
+<body>
+    <canvas id="cvs"></canvas>
+</body>
+
+<footer>
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="draw.js"></script>
+</footer>
 
-</body>
 </html>
