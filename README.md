@@ -4,6 +4,7 @@ A collaborative Canvas using express and socket.&#8203;io
 #### Features:
 - multi-user support with real time drawing
 - different stroke color per client
+- support for touch devices
 
 #### Installation:
 
@@ -14,9 +15,20 @@ $ npm install
 $ node server.js
 ```
 
+#### Configuration
+
+To change the port, create a `.env` file in the root directory, and set the `PORT` variable to your desired port number.
+
+ex.:
+```
+PORT=1337
+```
+
+This will set the port to `1337`.
+
 #### Viewing the app locally
 
-Navigate to `http://localhost:3000` and use the mouse to draw on the canvas.
+Navigate to `http://localhost:3000` (or the port that you configured using the `.env` file) and use the mouse to draw on the canvas.
 
 #### Demo
 [Available on Heroku](https://masscanvas.herokuapp.com/)
