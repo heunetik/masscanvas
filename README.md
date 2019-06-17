@@ -5,6 +5,8 @@ A collaborative Canvas using express and socket.&#8203;io
 - multi-user support with real time drawing
 - different stroke color per client
 - support for touch devices
+- scroll the mousewheel up or down to increase/decrease the brush size by 1px
+- hold shift while scrolling to resize the brush by 10px instead of 1px
 
 #### Installation:
 
