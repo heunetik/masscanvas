@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
     const current = {
         color: "#xxxxxx".replace(/x/g, y => (Math.random() * 16 | 0).toString(16)),
-        lineWidth: 60
+        lineWidth: 6
     };
 
     ctx.canvas.width = window.innerWidth;
